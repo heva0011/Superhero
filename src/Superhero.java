@@ -1,21 +1,19 @@
 public class Superhero {
-
     public String realName;
     public String superheroName;
     public String superPower;
-    public String species;
+    int yearCreated;
     public double height;
+    private boolean humanOrNot;
 
     // constructor
-    public Superhero(String RealName, String SuperheroName, String SuperPower, String Species, double Height) {
+    public Superhero(String RealName, String SuperheroName, String SuperPower, int yearCreated, boolean humanOrNot, double Height) {
         this.realName = RealName;
         this.superheroName = SuperheroName;
         this.superPower = SuperPower;
-        this.species = Species;
+        this.yearCreated = yearCreated;
+        this.humanOrNot = humanOrNot;
         this.height = Height;
-    }
-    public Superhero() {
-
     }
 
     // get method
@@ -32,19 +30,36 @@ public class Superhero {
         return superPower;
     }
 
-    public String getSpecies() {
-        return species;
+    int getYearCreated() {
+        return yearCreated;
+    }
+
+    public boolean getHumanOrNot() {
+        return humanOrNot;
+    }
+
+    public double getHeight() {
+        return height;
     }
 
     public String toString() {
-        return "Real Name: " + realName + "  Superhero name: " + superheroName + "  Superpower(s): " + superPower + "  Species: " + species + "  Height: " + height;
+        return "Real Name: " + realName + "  Superhero name: " + superheroName + "  Superpower(s): " + superPower + "  Species: " + humanOrNot + "  Height: " + height;
     }
 
     // set method
-
     public void setRealName(String RealName) {
         this.realName = RealName;
     }
 
-
+    public void setSuperheroName(String superheroNameName) {
+    }
+    public void setSuperPower(String superPower) {
+    }
+    public void setYearCreated(int yearCreated) {
+    }
+    public void setHumanOrNot(boolean humanOrNot) {
+    }
+    public void setHeight(double height) {
+    }
 }
+
