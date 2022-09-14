@@ -17,6 +17,8 @@ public class Main {
             System.out.println("""
                     Welcome to the Super Hero Universe. 
                     Enter 1 to create your own Super Hero.
+                    Enter 2 to search for a Super Hero.
+                    Enter 3 to show all Super Heroes.
                     Enter 9 to exit.
                     """);
 
@@ -27,7 +29,7 @@ public class Main {
                 System.out.println("Enter their Superhero name.");
                 String superheroName = sc.next();
                 System.out.println("Enter superpower(s).");
-                String superpower = sc.next();
+                String superPower = sc.next();
                 System.out.println("Enter their creation year.");
                 int yearCreated = sc.nextInt();
                 System.out.println("Enter their height.");
@@ -38,17 +40,26 @@ public class Main {
                 if (humanOrNotString.equals("y")) ;
                 humanOrNot = true;
 
-            } else {
-                System.exit(0);
+                if (brugerValg == 2) {
+                    System.out.println("Type in the name of the Superhero you're looking for.");
+                    String searchName = sc.nextLine();
+                    database.searchSuperhero(searchName);
+                }
+
+                if (brugerValg == 3) {
+                    System.out.println("Bruce Wayne or Batman. No superpowers but extremely skilled. Relies on intellect. Human. 1.88m tall. From 1939.");
+                    System.out.println("Diana Prince or Wonder Woman. Powers include super strength, speed and the ability to fly. Demigoddess. 1.78m tall. From 1942.");
+                    System.out.println("Barry Allen or Flash. Incredible speed and reflexes. Human. 1.83m tall. From 1956.");
+
+                } else {
+                    System.exit(0);
+                }
+                Superhero[] superheroList = new Superhero[3];
+                superheroList[0] = superhero1;
+                superheroList[1] = superhero2;
+                superheroList[2] = superhero3;
             }
 
-            Superhero[] superheroList = new Superhero[3];
-            superheroList[0] = superhero1;
-            superheroList[1] = superhero2;
-            superheroList[2] = superhero3;
-
-        }    while (brugerValg != 9) ;
+        } while (brugerValg != 9) ;
     }
 }
-
-
