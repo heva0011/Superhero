@@ -25,41 +25,42 @@ public class Main {
             brugerValg = sc.nextInt();
             if (brugerValg == 1) {
                 System.out.println("Enter their real name.");
-                String realName = sc.next();
+                String realName = sc.nextLine();
+                sc.next();
                 System.out.println("Enter their Superhero name.");
-                String superheroName = sc.next();
+                String superheroName = sc.nextLine();
+                sc.next();
                 System.out.println("Enter superpower(s).");
-                String superPower = sc.next();
+                String superPower = sc.nextLine();
+                sc.next();
                 System.out.println("Enter their creation year.");
                 int yearCreated = sc.nextInt();
                 System.out.println("Enter their height.");
                 double height = sc.nextDouble();
                 System.out.println("Enter if they're a human or not. (y/n)");
-                String humanOrNotString = sc.next();
+                sc.next();
+                String humanOrNotString = sc.nextLine();
                 boolean humanOrNot = false;
                 if (humanOrNotString.equals("y")) ;
                 humanOrNot = true;
 
-                if (brugerValg == 2) {
-                    System.out.println("Type in the name of the Superhero you're looking for.");
-                    String searchName = sc.nextLine();
-                    database.searchSuperhero(searchName);
-                }
+            } else if (brugerValg == 2) {
+                String searchName = sc.nextLine();
+                database.searchDatabase();
 
-                if (brugerValg == 3) {
-                    System.out.println("Bruce Wayne or Batman. No superpowers but extremely skilled. Relies on intellect. Human. 1.88m tall. From 1939.");
-                    System.out.println("Diana Prince or Wonder Woman. Powers include super strength, speed and the ability to fly. Demigoddess. 1.78m tall. From 1942.");
-                    System.out.println("Barry Allen or Flash. Incredible speed and reflexes. Human. 1.83m tall. From 1956.");
+            } else if (brugerValg == 3) {
+                System.out.println("Bruce Wayne or Batman. No superpowers but extremely skilled. Relies on intellect. Human. 1.88m tall. From 1939.");
+                System.out.println("Diana Prince or Wonder Woman. Powers include super strength, speed and the ability to fly. Demigoddess. 1.78m tall. From 1942.");
+                System.out.println("Barry Allen or Flash. Incredible speed and reflexes. Human. 1.83m tall. From 1956.");
 
-                } else {
-                    System.exit(0);
-                }
-                Superhero[] superheroList = new Superhero[3];
-                superheroList[0] = superhero1;
-                superheroList[1] = superhero2;
-                superheroList[2] = superhero3;
+            } else {
+                System.exit(0);
             }
+            Superhero[] superheroList = new Superhero[3];
+            superheroList[0] = superhero1;
+            superheroList[1] = superhero2;
+            superheroList[2] = superhero3;
 
-        } while (brugerValg != 9) ;
+        } while (brugerValg != 9);
     }
 }

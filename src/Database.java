@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Database {
 
@@ -16,19 +17,23 @@ public class Database {
         //Superhero.add(superhero);
     }
 
-    public void searchSuperhero(String searchName) {
-        boolean find = false;
-        for (Superhero superhero : superheroes) {
-            System.out.println("The Superheroes real name is " + superhero.getRealName());
-            System.out.println("The Superhero is called " + superhero.getSuperheroName());
-            System.out.println("Their superpower(s) are " + superhero.getSuperPower());
-            System.out.println("Their creation year is " + superhero.getYearCreated());
-            System.out.println("The hero is " + superhero.getHeight() + "this tall.");
-            System.out.println("The Superhero is a " + superhero.getHumanOrNot());
-            find = true;
+    public void searchDatabase() {
+
+        System.out.println("Type in the name of the Superhero you're looking for.");
+        Scanner sc = new Scanner(System.in);
+        String searchName = sc.nextLine();
+
+        ArrayList<Superhero> searchResults = new ArrayList<Superhero>();
+
+        for (Superhero nameSearch : superheroes) {
+            if (nameSearch.getSuperheroName().contains(searchName)) {
+                searchResults.add(nameSearch);
+            }
         }
-        if (!find) {
-            System.out.println("There is no match for your request." + searchName);
-        }
+        if (!searchResults.isEmpty())
+            for (Superhero nameSearch : searchResults)
+                System.out.println(nameSearch);
+        else System.out.println("There are no matches for " + "\"" + searchName + "\"");
     }
 }
+
