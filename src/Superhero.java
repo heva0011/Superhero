@@ -53,12 +53,16 @@ public class Superhero {
 
     public void setSuperheroName(String superheroNameName) {
     }
+
     public void setSuperPower(String superPower) {
     }
+
     public void setYearCreated(int yearCreated) {
     }
+
     public void setHumanOrNot(boolean humanOrNot) {
     }
+
     public void setHeight(double height) {
     }
 }
