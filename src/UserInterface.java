@@ -5,12 +5,21 @@ public class UserInterface {
 
     public void startUI() {
         Scanner sc = new Scanner(System.in);
-        // Superhero superhero = new Superhero();
+        //Superhero superhero = new Superhero();
         Database database = new Database();
 
         Superhero superhero1 = new Superhero("Bruce Wayne", "Batman", "None. Relies on skills, wealth and intellect.", 1939, true, 1.88);
         Superhero superhero2 = new Superhero("Diana Prince", "Wonder Woman", "Super strength, speed and the ability to fly.", 1942, false, 1.78);
         Superhero superhero3 = new Superhero("Barry Allen", "Flash", "Incredible speed and reflexes", 1956, true, 1.83);
+
+        Superhero[] superheroList = new Superhero[3];
+        superheroList[0] = superhero1;
+        superheroList[1] = superhero2;
+        superheroList[2] = superhero3;
+
+        database.addSuperhero(superhero1);
+        database.addSuperhero(superhero2);
+        database.addSuperhero(superhero3);
 
         int userChoice = 0;
         do {
@@ -19,6 +28,7 @@ public class UserInterface {
                     Enter 1 to create your own Super Hero.
                     Enter 2 to search for a Super Hero.
                     Enter 3 to show all Super Heroes.
+                    Enter 4 to delete Super Heroes.
                     Enter 9 to exit.
                     """);
             try {
@@ -58,13 +68,14 @@ public class UserInterface {
                     System.out.println(" ");
                     break;
 
+                } else if (userChoice == 4) {
+                    System.out.println("Enter the name of the Superhero you want to delete.");
+                    String superheroToRemove = sc.next();
+                    database.removeSuperhero(superheroToRemove);
+
                 } else if (userChoice == 9) {
                     System.exit(0);
                 }
-                Superhero[] superheroList = new Superhero[3];
-                superheroList[0] = superhero1;
-                superheroList[1] = superhero2;
-                superheroList[2] = superhero3;
 
             } catch (InputMismatchException e) {
                 sc.nextLine();

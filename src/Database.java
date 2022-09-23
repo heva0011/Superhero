@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Database {
@@ -13,7 +14,7 @@ public class Database {
     }
 
     public void addSuperhero(Superhero superhero) {
-        //Superhero.add(superhero);
+        superheroes.add(superhero);
     }
 
     public void searchDatabase() {
@@ -33,6 +34,20 @@ public class Database {
             for (Superhero nameSearch : searchResults)
                 System.out.println(nameSearch);
         else System.out.println("There are no matches for " + "\"" + searchName + "\"");
+    }
+
+    public void removeSuperhero(String superHeroName) {
+        int index = 0;
+
+        System.out.println("You have now successfully deleted 1 Superhero. You had " + superheroes.size());
+
+        for (Superhero n : superheroes) {
+            if (n.getSuperheroName().equals(superHeroName)) {
+                index = superheroes.indexOf(n);
+            }
+        }
+        superheroes.remove(index);
+        System.out.println("Now you have " + superheroes.size() + " left.\n");
     }
 }
 

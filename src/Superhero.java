@@ -47,23 +47,28 @@ public class Superhero {
     }
 
     // set method
-    public void setRealName(String RealName) {
-        this.realName = RealName;
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
-    public void setSuperheroName(String superheroNameName) {
+    public void setSuperheroName(String superheroName) {
+        this.superheroName = superheroName;
     }
 
     public void setSuperPower(String superPower) {
+        this.superPower = superPower;
     }
 
     public void setYearCreated(int yearCreated) {
+        this.yearCreated = yearCreated;
     }
 
     public void setHumanOrNot(boolean humanOrNot) {
+        this.humanOrNot = humanOrNot;
     }
 
     public void setHeight(double height) {
+        this.height = height;
     }
 }
 
