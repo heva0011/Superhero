@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class UserInterfaceTest {
 
     public void testObjectCreation() {
+        //here the code will test if everything works the way it should and it lets me know
+        //if there are any errors.
 
         Superhero superhero = new Superhero("Bruce Wayne", "Batman", "Skills and intellect", 1939, true, 1.88);
         assertEquals("Bruce Wayne", superhero.getRealName());
@@ -21,7 +23,7 @@ class UserInterfaceTest {
         assertFalse(superhero.getHumanOrNot());
     }
 
-    //@Disabled can be used if you want to disable a @Test
+    //@Disabled can be used if you want to disable a specific code block.
     @Test
     public void test() {
         Superhero superhero = new Superhero("Bruce Wayne", "Batman", "Skills and intellect", 1939, true, 1.88);
